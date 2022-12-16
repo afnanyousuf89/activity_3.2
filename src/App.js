@@ -38,7 +38,7 @@ function App() {
 				}
 				
 				{mydataAPI.map((row, i) => {
-					return <h2 className='itemLink' onClick={changeItem} id={i+1} key={i+1}>{i + 1} - {row.name}</h2>
+					return <h2 className='itemLink' onClick={changeItem} data-testid={row.name} id={i+1} key={i+1}>{i + 1} - {row.name}</h2>
 				})}
 			</header>
 			<div className="App-body">

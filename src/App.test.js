@@ -4,21 +4,20 @@ import App from './App';
 import SingleItem from './SingleItem';
 
 test('check API Data on page loading', async () => {
-  render(<App />);
-  const linkElement = await screen.findByText(/List Of Charactors/i);
-  expect(linkElement).toBeInTheDocument();
+	render(<App />);
+	const linkElement = await screen.findByText(/List Of Charactors/i);
+	expect(linkElement).toBeInTheDocument();
 });
 
 
 test('check API Data On child Data Pokemon', async () => {
+	render(<App />);
+	const mx = await screen.findByTestId(/Bulbasaur/i);	
+	fireEvent.click(mx);
 
-  // const mx = 
 
-  // render(<SingleItem />);
-
-    
-  //   const linkElement = await screen.findByText(/Height/i);
-  //   expect(linkElement).toBeInTheDocument();
+	const linkElement = await screen.findByText(/Height/i);
+	expect(linkElement).toBeInTheDocument();
 
 
 
