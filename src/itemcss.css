@@ -1,0 +1,13 @@
+
+.items{
+    display: flex;
+    justify-content: space-around;
+}
+h3{
+padding: 10px;
+}
+
+img{
+    width: 20%;
+    border: 1px solid #000;
+}
