@@ -7,7 +7,7 @@ import SingleItem from './SingleItem'
 
 function App() {
 
-	const [selectedItem, setselectedItem] = useState('');
+	
 	const [childAPI, setchildAPI] = useState([]);
 
 	const mydataAPI = MyAPI({
@@ -17,14 +17,8 @@ function App() {
 	});
 
 	async function changeItem(e) {
-		setselectedItem(e.target.id);
-			// const childdataAPI = ChildAPI({
-			// 	filter: {
-			// 		id: selectedItem
-			// 	}, children: ['abilities']
-			// });
-	
-			// console.log(childdataAPI);
+		
+
 			let url = `https://pokeapi.co/api/v2/pokemon/${e.target.id}`;
 			const response = await fetch(url);
 			const data = await response.json();
@@ -39,7 +33,10 @@ function App() {
 		<div className="wrapper">
 
 			<header className="App-header">
-				<h1>List Of Charactors</h1>
+				{
+					mydataAPI.length > 0 ?<h1>List Of Charactors</h1> : ''
+				}
+				
 				{mydataAPI.map((row, i) => {
 					return <h2 className='itemLink' onClick={changeItem} id={i+1} key={i+1}>{i + 1} - {row.name}</h2>
 				})}

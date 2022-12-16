@@ -1,7 +1,5 @@
 import {useEffect, useState} from 'react';
-export const MyAPI = ({
-	filter, children
-}) => {
+export const MyAPI = ({filter, children}) => {
 	const [MyAPIData, setMyApiData] = useState([]);
 	useEffect(()=>{
 		async function loadMyApi(){
