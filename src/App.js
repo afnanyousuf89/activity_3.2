@@ -32,7 +32,7 @@ function App() {
 
 	return (
 		<div className="wrapper">
-
+			
 			<header className="App-header">
 				{
 					mydataAPI.length > 0 ?<h1>List Of Charactors</h1> : ''
@@ -56,7 +56,7 @@ function App() {
 			
 			
 			</div>
-
+			<div className='main-header'>Footer Consuming API</div>
 		</div>
 	);
 }
