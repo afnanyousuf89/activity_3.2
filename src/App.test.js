@@ -12,14 +12,16 @@ test('check API Data on page loading', async () => {
 
 test('check API Data On child Data Pokemon', async () => {
 	render(<App />);
-	const mx = await screen.findByTestId(/Bulbasaur/i);	
+	const mx = await screen.findByTestId(/bulbasaur/i);	
 	fireEvent.click(mx);
-
-
 	const linkElement = await screen.findByText(/Height/i);
 	expect(linkElement).toBeInTheDocument();
+});
 
 
 
-
+test('check Loading Text showing on API Data call child Data Pokemon', async () => {
+	render(<App />);
+	const linkElement = screen.findByText(/Loading.../i);
+	expect(linkElement).toBeInTheDocument();
 });

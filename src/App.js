@@ -7,7 +7,7 @@ import SingleItem from './SingleItem'
 
 function App() {
 
-	
+	const [loading, setloading] = useState(false);
 	const [childAPI, setchildAPI] = useState([]);
 
 	const mydataAPI = MyAPI({
@@ -17,13 +17,14 @@ function App() {
 	});
 
 	async function changeItem(e) {
-		
+		setloading(true);
 
 			let url = `https://pokeapi.co/api/v2/pokemon/${e.target.id}`;
 			const response = await fetch(url);
 			const data = await response.json();
 			setchildAPI(data);
 			//console.log(childAPI.sprites.back_default);
+			setloading(false);
 
 };
 
@@ -44,6 +45,8 @@ function App() {
 			<div className="App-body">
 {
 	childAPI.id > 0 ? 
+
+	loading ? <div>Loading...</div> :
 	
 	<SingleItem namez={childAPI}/>
 
